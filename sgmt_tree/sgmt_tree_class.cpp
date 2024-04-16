@@ -13,7 +13,7 @@ class sgTree{
     }
 
     void build(int ind, int low, int high, int arr[]){
-        if( low > high ) return;
+        // if( low > high ) return; // we can skip this line bcoz it will be handle by below case low==high
 
         if( low == high) {
             sgt[ind] = arr[low];
@@ -29,7 +29,7 @@ class sgTree{
     }
 
     int query(int ind, int low, int high, int ql, int qr){
-        if( low > high) return INT_MAX;
+         // if( low > high ) return; // we can skip this line bcoz it will be handle by below case
 
         // no overlap
         if( high < ql || low > qr){
@@ -48,8 +48,8 @@ class sgTree{
     }
 
     void update(int ind, int low, int high, int q_ind, int val){
-        if( low > high) return;
-
+        // if( low > high ) return; // we can skip this line bcoz it will be handle by below case low==high
+        
         if( low == high) {
             sgt[ind] = val;
             return;
